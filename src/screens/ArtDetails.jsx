@@ -53,30 +53,37 @@ export default function ArtDetails() {
         if (item === undefined) {
             return(
                 <div>
-                            <Button onClick={() => {
-                                history.push(`/art/${parseInt(id)-10}`)}
-                                } className="m-2">
-                                Previous (-10)
-                            </Button>
-                            <Button onClick={() => {
-                                history.push(`/art/${parseInt(id)-1}`)}
-                                } className="m-2">
-                                Previous
-                            </Button>
-                            <Button onClick={() => {
-                                history.push(`/art/${parseInt(id)+1}`)}
-                                } className="m-2">
-                                Next
-                            </Button>
-                            <Button onClick={() => {
-                                history.push(`/art/${parseInt(id)+10}`)}
-                                } className="m-2">
-                                Next (+10)
-                            </Button>
-                        </div>
+                    <Button onClick={() => {
+                        history.push(`/art/${parseInt(id)-10}`)}
+                        } className="m-2">
+                        Previous (-10)
+                    </Button>
+                    <Button onClick={() => {
+                        history.push(`/art/${parseInt(id)-1}`)}
+                        } className="m-2">
+                        Previous
+                    </Button>
+                    <Button onClick={() => {
+                        history.push(`/art/${parseInt(id)+1}`)}
+                        } className="m-2">
+                        Next
+                    </Button>
+                    <Button onClick={() => {
+                        history.push(`/art/${parseInt(id)+10}`)}
+                        } className="m-2">
+                        Next (+10)
+                    </Button>
+            </div>
             )
         }
         else if(!error) {
+            const r = parseInt(item.colors[0]?.color.substring(1, 3), 16)
+            const g = parseInt(item.colors[0]?.color.substring(3, 5), 16)
+            const b = parseInt(item.colors[0]?.color.substring(5, 7), 16)
+
+            console.log(r, g, b);
+            const txtWhite = r < 110 && g < 110 && b < 110;
+
             return(
                 <div className="content">
                     {item && 
@@ -84,7 +91,7 @@ export default function ArtDetails() {
                         <Title 
                         style={{
                             backgroundColor: item.colors && item.colors[0]?.color,
-                            color: item.colors && item.colors[item.colors.length-3]?.color,
+                            color: txtWhite ? '#FFFFFF': '#000000'
                         }}
                         >{item.caption ? item.caption : "No caption"}</Title>
                         <Line />
@@ -95,22 +102,46 @@ export default function ArtDetails() {
                             alt={item.alttext} />
                         </div>
                         <div>
-                            <Button onClick={() => {
+                            <Button
+                            style={{
+                                backgroundColor: item.colors && item.colors[0]?.color,
+                                color: txtWhite ? '#FFFFFF': '#000000',
+                                border: 'none'
+                            }}
+                            onClick={() => {
                                 history.push(`/art/${parseInt(id)-10}`)}
                                 } className="m-2">
                                 Previous (-10)
                             </Button>
-                            <Button onClick={() => {
+                            <Button
+                            style={{
+                                backgroundColor: item.colors && item.colors[0]?.color,
+                                color: txtWhite ? '#FFFFFF': '#000000',
+                                border: 'none'
+                            }}
+                            onClick={() => {
                                 history.push(`/art/${parseInt(id)-1}`)}
                                 } className="m-2">
                                 Previous
                             </Button>
-                            <Button onClick={() => {
+                            <Button 
+                            style={{
+                                backgroundColor: item.colors && item.colors[0]?.color,
+                                color: txtWhite ? '#FFFFFF': '#000000',
+                                border: 'none'
+                            }}
+                            onClick={() => {
                                 history.push(`/art/${parseInt(id)+1}`)}
                                 } className="m-2">
                                 Next
                             </Button>
-                            <Button onClick={() => {
+                            <Button 
+                            style={{
+                                backgroundColor: item.colors && item.colors[0]?.color,
+                                color: txtWhite ? '#FFFFFF': '#000000',
+                                border: 'none'
+                            }}
+                            onClick={() => {
                                 history.push(`/art/${parseInt(id)+10}`)}
                                 } className="m-2">
                                 Next (+10)
