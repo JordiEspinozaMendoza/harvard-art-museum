@@ -1,0 +1,5 @@
+export const actions = {
+    GET_ART_REQUEST: 'GET_ART_REQUEST',
+    GET_ART_SUCCESS: 'GET_ART_SUCCESS',
+    GET_ART_FAILURE: 'GET_ART_FAILURE',
+}

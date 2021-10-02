@@ -1,7 +1,7 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 //Screens
-import ArtDetails from './screens/ArtDetails';
+import ArtDetails from 'screens/ArtScreen/ArtDetails';
 
 function App() {
   return (
