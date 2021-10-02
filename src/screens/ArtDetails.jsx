@@ -35,7 +35,7 @@ export default function ArtDetails() {
   useEffect(() => {
     setIsLoaded(false);
     fetch(
-      `https://api.harvardartmuseums.org/image?q=id:${id}&size=2&apikey=4f0413b4-cf20-4e70-9792-202beca9b50e`
+      `https://api.harvardartmuseums.org/image?q=id:${id}&size=2&apikey=${process.env.REACT_APP_API_KEY}`
     )
       .then((response) => response.json())
       .then((data) => {
