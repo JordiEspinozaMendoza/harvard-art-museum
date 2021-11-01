@@ -1,0 +1,50 @@
+@import "../../assets/scss/constants.scss";
+.view_all {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+.banner__home {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: 70vh;
+  grid-template-areas: "banner__home__left banner__home__right";
+  .banner__home__text {
+    grid-area: banner__home__left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3rem;
+  }
+  .banner__home__image {
+    grid-area: banner__home__right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+@media screen and(max-width:$medium) {
+  .banner__home {
+    //   1 column
+    grid-template-columns: 1fr;
+    // 2 rows
+    grid-template-rows: auto 80vh;
+    //  2 areas
+    grid-template-areas: "banner__home__left" "banner__home__right";
+    .banner__home__text {
+      padding: 2rem 1rem;
+      height: auto;
+    }
+    .banner__home__image {
+      padding: 0;
+    }
+  }
+}

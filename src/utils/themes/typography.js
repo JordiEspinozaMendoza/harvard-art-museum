@@ -1,4 +1,4 @@
-export const primaryFont = "'Poppins', sans-serif";
+export const primaryFont = "'Zen Kaku Gothic Antique', sans-serif";
 
 export const typeScale = {
   heroHeader: "4rem",

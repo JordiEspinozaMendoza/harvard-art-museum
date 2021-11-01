@@ -1,0 +1,45 @@
+@import "../../assets/scss/constants.scss";
+.collections-banner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 4rem;
+  .collections-banner__item {
+    grid-column: auto;
+    padding: 2rem 2rem;
+    height: 50vh;
+    img {
+      display: block;
+      height: 80%;
+      width: 100%;
+    }
+  }
+}
+// Large
+@media screen and (max-width: $xlarge) {
+  .collections-banner {
+    grid-gap: 0.5rem;
+    .collections-banner__item {
+      padding: 1rem 2rem;
+    }
+  }
+}
+// Large
+@media screen and (max-width: $large) {
+  .collections-banner {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+    .collections-banner__item {
+      padding: 1rem;
+    }
+  }
+}
+@media screen and (max-width: $small) {
+  .collections-banner {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0.5rem;
+    .collections-banner__item {
+      padding: 1rem 2rem;
+    }
+  }
+}

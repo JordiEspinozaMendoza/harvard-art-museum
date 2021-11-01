@@ -20,3 +20,11 @@ export const fadeToRight = keyframes`
     transform: translateX(0);
   }
 `;
+export const flip = keyframes`
+  50%{
+    transform: rotateX(180deg);
+  }
+  100%{
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+`;
